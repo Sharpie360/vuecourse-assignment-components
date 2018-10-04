@@ -4,7 +4,7 @@
         <hr>
         <div class="row">
             <app-server-list></app-server-list>
-            <app-server-details></app-server-details>
+            <app-server-details ></app-server-details>
         </div>
         <hr>
         <app-footer></app-footer>

@@ -12,6 +12,8 @@ Vue.component('app-server-list', ServerList)
 Vue.component('app-server-details', ServerDetails)
 Vue.component('app-footer', Footer)
 
+export const eventBus = new Vue({})
+
 new Vue({
   el: '#app',
   render: h => h(App)

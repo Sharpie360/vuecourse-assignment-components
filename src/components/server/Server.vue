@@ -6,22 +6,20 @@
 </template>
 
 <script>
+import { eventBus } from '../../main.js'
+
 import ServerList from './ServerList.vue'
   export default {
     data: function() {
       return {
-        currentServer: {
-          id: 1,
-          status: status
-        }
+
       }
     },
     props: ['id', 'status'],
     methods: {
       showDetails(id, status){
-        this.currentServer.id = id
-        this.currentServer.status = status
-        console.log(currentServer.id, status)
+        console.log(id, status)
+        eventBus.$emit('detailsLoaded', { id, status })
       }
     }
   }
