@@ -24,14 +24,23 @@
         }
       }
     },
-    methods: {
-
-    },
     components: {
       'app-server': Server
     },
-    created() {
-      
+    created(){
+      eventBus.$on('changeStatus', newStatus => {
+        for(let i = 0; i < this.servers.length; i++){
+          //console.log(this.servers[i])
+          if(this.servers[i].id === newStatus.id){
+            console.log(newStatus.status)
+            console.log('match')
+            this.servers[i].status = newStatus.status 
+          }
+        }
+      })
+      eventBus.$on('resetAllServers', () => {
+        this.servers.map(server => server.status = 'normal')
+      })
     }
   }
 </script>
