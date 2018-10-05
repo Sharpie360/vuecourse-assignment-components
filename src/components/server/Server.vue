@@ -22,5 +22,8 @@ import ServerList from './ServerList.vue'
         eventBus.$emit('detailsLoaded', { id, status })
       }
     }
+
+
+    // WHOOO WHOOOOO!!! WE DID IT!!!
   }
 </script>
